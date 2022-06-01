@@ -56,7 +56,10 @@ public class Calculator {
                 System.out.println("Enter two doubles: ");
                 String inputz = input.nextLine();
                 String[] inputw = inputz.split(" ");
-                if (Double.parseDouble(inputw[0]) != 0) {
+                if (Double.parseDouble(inputw[0]) == 0 || Double.parseDouble(inputw[1]) == 0) {
+                    System.out.println("Invalid input entered. Terminating...");
+                    break;
+                } else {
                     try {
                         double x = Double.parseDouble(inputw[0]);
                         double y = Double.parseDouble(inputw[1]);
@@ -66,9 +69,6 @@ public class Calculator {
                     } catch (NumberFormatException e) {
                         break;
                     }
-                } else {
-                    System.out.println("Invalid input entered. Terminating...");
-                    break;
                 }
             case "alphabetize":
                 System.out.println("Enter two words:");
