@@ -28,8 +28,52 @@ public class Calculator {
                     }
                 }
                 case "subtract":
+                    Scanner scan = new Scanner(System.in);
+                    System.out.println("Enter two integers:");
+                    String input1 = scan.nextLine();
+                    String[] input2 = input1.split(" ");
+                    try{
+                    int x = Integer.valueOf(input2[0]);
+                    int y = Integer.valueOf(input2[1]);
+                    int z = x + y;
+                    System.out.println("Answer: " + z);
+                    break;
+                    }catch(NumberFormatException e){
+                        cont = false;
+                    }
                 case "multiply":
+                    Scanner scan2 = new Scanner(System.in);
+                    System.out.println("Enter two integers:");
+                    String inputx = scan2.nextLine();
+                    String[] inputy = inputx.split(" ");
+                    try{
+                    double x = Double.parseDouble(inputy[0]);
+                    double y = Double.parseDouble(inputy[1]);
+                    double z = x * y;
+                    System.out.printf("Answer: %.2f%n", z);
+                    break;
+                    }catch(NumberFormatException e){
+                        cont = false;
+                    }
                 case "divide":
+                    Scanner scan3 = new Scanner(System.in);
+                    System.out.println("Enter two integers:");
+                    String inputz = scan3.nextLine();
+                    String[] inputw = inputz.split(" ");
+                    if(Double.parseDouble(inputw[0]) != 0){
+                        try{
+                        double x = Double.parseDouble(inputw[0]);
+                        double y = Double.parseDouble(inputw[1]);
+                        double z = x / y;
+                        System.out.printf("Answer: %.2f%n", z);
+                        break;
+                        }catch(NumberFormatException e){
+                        cont = false;
+                    }
+                }
+                else{
+                    cont = false;
+                }
                 case "alphabetize":
                 default:{
                 System.out.println("Invalid input entered. Terminating...");
