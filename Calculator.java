@@ -11,7 +11,6 @@ public class Calculator {
             String operation = input.nextLine();
             switch(operation.toLowerCase()){
                 case "add":{
-                    System.out.println();
                     System.out.println("Enter two integers:");
                     String input1 = input.nextLine();
                     String[] input2 = input1.split(" ");
@@ -21,13 +20,13 @@ public class Calculator {
                     int z = x + y;
                     System.out.println("Answer: " + z);
                     System.out.println();
-                    break;
+                    cont = false;
                     }catch(NumberFormatException e){
+                        System.out.println("Invalid input entered. Terminating...");
                         cont = false;
                     }
                 }
                 case "subtract":
-                    System.out.println();
                     System.out.println("Enter two integers:");
                     String input1 = input.nextLine();
                     String[] input2 = input1.split(" ");
@@ -36,13 +35,12 @@ public class Calculator {
                     int y = Integer.valueOf(input2[1]);
                     int z = x + y;
                     System.out.println("Answer: " + z);
-                    System.out.println();
-                    break;
+                    cont = false;
                     }catch(NumberFormatException e){
+                        System.out.println("Invalid input entered. Terminating...");
                         cont = false;
                     }
                 case "multiply":
-                    System.out.println();
                     System.out.println("Enter two integers:");
                     String inputx = input.nextLine();
                     String[] inputy = inputx.split(" ");
@@ -52,12 +50,12 @@ public class Calculator {
                     double z = x * y;
                     System.out.printf("Answer: %.2f%n", z);
                     System.out.println();
-                    break;
+                    cont = false;
                     }catch(NumberFormatException e){
+                        System.out.println("Invalid input entered. Terminating...");
                         cont = false;
                     }
                 case "divide":
-                    System.out.println();
                     System.out.println("Enter two integers:");
                     String inputz = input.nextLine();
                     String[] inputw = inputz.split(" ");
@@ -67,17 +65,16 @@ public class Calculator {
                         double y = Double.parseDouble(inputw[1]);
                         double z = x / y;
                         System.out.printf("Answer: %.2f%n", z);
-                        System.out.println();
-                        break;
+                        cont = false;
                         }catch(NumberFormatException e){
                         cont = false;
                     }
                 }
                 else{
+                    System.out.println("Invalid input entered. Terminating...");
                     cont = false;
                 }
                 case "alphabetize":
-                    System.out.println();
                     System.out.println("Enter two words:");
                     String inputq = input.nextLine();
                     String[] inputr = inputq.split(" ");
@@ -85,24 +82,22 @@ public class Calculator {
                     String u = inputr[1].toLowerCase();
                     int compare = t.compareTo(u);
                     if (compare > 0){
-                        System.out.println(inputr[1] + " comes before " + inputr[0] + " alphabetically.");
-                        System.out.println();
-                        break;
+                        System.out.println("Answer: " + inputr[1] + " comes before " + inputr[0] + " alphabetically.");
+                        cont = false;
                     }
                     else if(compare < 0){
-                        System.out.println(inputr[0] + " comes before " + inputr[1] + " alphabetically.");
-                        System.out.println();
-                        break;
+                        System.out.println("Answer: " + inputr[0] + " comes before " + inputr[1] + " alphabetically.");
+
+                        cont = false;
                     }
                     else{
-                        System.out.println("Chicken or Egg.");
-                        System.out.println();
-                        break;
+                        System.out.println("Answer: Chicken or Egg.");
+                        cont = false;
                     }
                 default:{
-                    System.out.println("Invalid input entered. Terminating...");
                     cont = false;
                 }
+                input.close();
             }
         }
     }
