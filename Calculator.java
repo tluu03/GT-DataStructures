@@ -1,9 +1,7 @@
+//I worked on the homework assignment alone, using only course materials.
 import java.util.Scanner;
 public class Calculator {
     public static void main(String[] args){
-        int add, subtract;
-        double multiply, divide;
-        String word;
         Scanner input = new Scanner(System.in);
         boolean cont = true;
 
@@ -13,9 +11,9 @@ public class Calculator {
             String operation = input.nextLine();
             switch(operation.toLowerCase()){
                 case "add":{
-                    Scanner scan = new Scanner(System.in);
+                    //Scanner input = new Scanner(System.in);
                     System.out.println("Enter two integers:");
-                    String input1 = scan.nextLine();
+                    String input1 = input.nextLine();
                     String[] input2 = input1.split(" ");
                     try{
                     int x = Integer.valueOf(input2[0]);
@@ -28,9 +26,8 @@ public class Calculator {
                     }
                 }
                 case "subtract":
-                    Scanner scan = new Scanner(System.in);
                     System.out.println("Enter two integers:");
-                    String input1 = scan.nextLine();
+                    String input1 = input.nextLine();
                     String[] input2 = input1.split(" ");
                     try{
                     int x = Integer.valueOf(input2[0]);
@@ -42,9 +39,8 @@ public class Calculator {
                         cont = false;
                     }
                 case "multiply":
-                    Scanner scan2 = new Scanner(System.in);
                     System.out.println("Enter two integers:");
-                    String inputx = scan2.nextLine();
+                    String inputx = input.nextLine();
                     String[] inputy = inputx.split(" ");
                     try{
                     double x = Double.parseDouble(inputy[0]);
@@ -56,9 +52,8 @@ public class Calculator {
                         cont = false;
                     }
                 case "divide":
-                    Scanner scan3 = new Scanner(System.in);
                     System.out.println("Enter two integers:");
-                    String inputz = scan3.nextLine();
+                    String inputz = input.nextLine();
                     String[] inputw = inputz.split(" ");
                     if(Double.parseDouble(inputw[0]) != 0){
                         try{
