@@ -54,13 +54,13 @@ public class Battleship {
             }
             if (i == 1) {
                 printBattleShip(player1, 'T');
-                for (int z = 0; z < 101; z++) {
-                    System.out.println("");
+                for (int z = 0; z < 100; z++) {
+                    System.out.println();
                 }
             } else {
                 printBattleShip(player2, 'T');
-                for (int z = 0; z < 101; z++) {
-                    System.out.println("");
+                for (int z = 0; z < 100; z++) {
+                    System.out.println();
                 }
             }
         }
@@ -157,7 +157,7 @@ public class Battleship {
                     System.out.print("- ");
                 }
             }
-            System.out.println("");
+            System.out.println();
         }
     }
 }
