@@ -17,9 +17,9 @@ public class Battleship {
         int player1Score = 5;
         int player2Score = 5;
         Scanner scan = new Scanner(System.in);
-        System.out.printf("\nWelcome to Battleship!\n");
+        System.out.printf("\nWelcome to Battleship!\n\n");
         for (int i = 1; i < 3; i++) {
-            System.out.println("PLAYER " + i + ", ENTER YOUR SHIPS' LOCATION.");
+            System.out.println("PLAYER " + i + ", ENTER YOUR SHIPS' COORDINATES.");
             for (int j = 1; j < player1.length + 1; j++) {
                 System.out.println("Enter ship " + j + " location:");
                 String input1 = scan.nextLine();
